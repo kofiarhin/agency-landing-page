@@ -1,0 +1,93 @@
+section.testimonial
+	width: 100%
+	padding: 0 0 30px
+	.title
+		margin-bottom: 30px
+		font-size: 50px
+		text-transform: uppercase
+		color: $light-grey
+		font-family: 'Playfair Display', serif
+.fb-wrapper
+	width: 80%
+	max-width: 100%
+.fb-unit
+	width: 600px
+	max-width: 100%
+	background: $grey
+	margin-bottom: 40px
+	padding: 20px 30px
+	display: none
+	margin-left: auto
+	box-shadow: 0px 10px 15px rgba($black, 0.4)
+	cursor: pointer
+	&.active
+		display: block
+		@extend %spinner
+.fb-title
+	font-size: 40px
+	margin: 0
+	text-align: center
+	text-transform: uppercase
+	font-weight: 700
+	color: $white
+	font-family: 'Playfair Display', serif
+	span
+		color: $main	
+.q-mark
+	font-size: 40px
+	color: $main
+.content
+	color: $white
+	font-size: 18px
+	line-height: 1.5
+	font-style: italic
+
+.face-wrapper
+	width: 480px
+	max-width: 100%
+	display: flex
+	margin-left: 80px
+	box-shadow: 0px 10px 15px rgba($black, 0.4)
+.face-unit
+	width: 25%
+	background:
+		image: url(../img/faces/face-1.jpg)
+		size: cover
+		position: center
+		repeat: no-repeat
+	cursor: pointer
+	opacity: 0.6
+	+transition
+	&:nth-child(2)
+		background:
+			image: url(../img/faces/face-2.jpg)
+			size: 180%
+			position: top center
+	&:nth-child(3)
+		background:
+			image: url(../img/faces/face-3.jpg)
+	&:nth-child(4)
+		background:
+			image: url(../img/faces/face-4.jpg)					
+
+	&:before
+		content: ""
+		display: block
+		padding-top: 100%
+	&.active
+		opacity: 1
+		transform: scale(1.2)
+		z-index: 200
+		outline: 4px solid $main	
+
+@media (max-width: 640px)
+	.fb-wrapper
+		width: 100%
+	.face-wrapper	
+		margin: 0 auto
+	.fb-title
+		font-size: 25px
+	.content
+		font-size: 15px
+	.q-mark
+		font-size: 32px			

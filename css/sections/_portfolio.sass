@@ -1,0 +1,82 @@
+section.portfolio
+	.port-belt
+		width: 960px
+		max-width: 100%
+		height: 500px
+		margin: 30px auto 0 auto// change the margin to lineup with the title
+		+display(flex)
+		+justify-content(space-between)
+	.main-wrapper
+		width: 70%
+		max-width: 100%
+		height: 100%
+		position: relative
+		+transition
+		margin-bottom: 30px
+		box-shadow: 0px 5px 30px rgba($black, 0.3)
+	.main-unit
+		width: 100%
+		height: 100%
+		position: absolute
+		display: none
+
+		background:
+			size: cover
+			position: center
+			repeat: no-repeat
+		@for $i from 1 through 4
+			&:nth-child(#{$i})
+				background:
+					image: url(../img/thumb-nails/thumb-#{$i}.jpg)	
+		&.show-thumb
+			display: block
+			@extend %swoosh
+
+	.sub-wrapper
+		width: 20%
+		height: 100%
+		max-width: 100%
+		+clearfix
+	.sub-unit
+		width: 100%
+		height: 25%
+		opacity: 0.5
+		cursor: pointer
+		+transition
+		background:
+			size: contain
+			position: top center
+			repeat: no-repeat
+		@for $i from 1 through 4
+			&:nth-child(#{$i})
+				background:
+					image: url(../img/thumb-nails/thumb-#{$i}.jpg)	
+		&.show-thumb
+			opacity: 1
+			border: 5px solid $main
+
+@media (max-width: 760px)
+	section.portfolio
+		.port-belt
+			display: block
+			height: 400px
+		.main-wrapper
+			width: 100%
+		.sub-wrapper
+			width: 100%
+			height: auto
+		.sub-unit
+			width: 25%
+			background: green
+			float: left
+			background:
+				size: cover
+			&:before
+				content: ""
+				display: block
+				padding-top: 100%	
+
+@media (max-width: 400px)
+	section.portfolio
+		.port-belt
+			height: 300px
