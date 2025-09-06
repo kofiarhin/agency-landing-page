@@ -38,13 +38,10 @@ function testimonialStuff() {
 function navStuff() {
   $('.menu').on('click', function(){
     $('.mobile-nav').toggleClass('show');
-    $('.menu').css({'transform': 'scale(0)'});
   });
-
 
   $('.mobile-nav nav a').on('click', function(){
     $('.mobile-nav').removeClass('show');
-    $('.menu').css({'transform': 'scale(1)'});
   });
 
 }
